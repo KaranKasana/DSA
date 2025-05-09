@@ -10,7 +10,7 @@ public:
                     pos = i;
                 } 
             }
-            if(pos >= 0) nums[pos] = nums[pos] * multiplier;
+            nums[pos] = nums[pos] * multiplier;
             k--;
         }
         return nums;
