@@ -1,14 +1,14 @@
 class Solution {
 public:
     bool halvesAreAlike(string s) {
-        unordered_set<char> map = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
-        int left = -1, right = s.length(), equal = 0;
-
-        while(++left < --right){
-            if(map.count(s[left])) equal++;
-            if(map.count(s[right])) equal--;
+        unordered_set<char> st = {'a','e','i','o','u','A','E','I','O','U'};
+        int left = 0, right = s.length()-1,n = 0;
+        while(left < right){
+            if(st.count(s[left])) n++;
+            if(st.count(s[right])) n--;
+            left++;
+            right--;
         }
-
-        return equal == 0;
+        return n == 0;
     }
 };
