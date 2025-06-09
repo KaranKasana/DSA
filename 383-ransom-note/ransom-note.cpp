@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        vector<int> hasharr(26);
+        int hasharr[26] = {0};
         for(int i = 0; i < magazine.length(); i++){
             hasharr[magazine[i] - 'a']++;
         }
