@@ -6,9 +6,7 @@ public:
             hasharr[magazine[i] - 'a']++;
         }
         for(int i = 0; i < ransomNote.length(); i++){
-            if(hasharr[ransomNote[i] - 'a']){
-                hasharr[ransomNote[i] - 'a']--;
-            }
+            if(hasharr[ransomNote[i] - 'a']) hasharr[ransomNote[i] - 'a']--;
             else return false;
         }
         return true;
