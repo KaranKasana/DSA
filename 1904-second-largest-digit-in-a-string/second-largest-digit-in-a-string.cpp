@@ -13,7 +13,6 @@ public:
                 }
             }
         }
-        if(first == second) return -1;
         return second;
     }
 };
