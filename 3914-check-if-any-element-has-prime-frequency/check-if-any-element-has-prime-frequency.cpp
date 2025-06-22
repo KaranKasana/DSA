@@ -10,12 +10,13 @@ public:
         return true;
     }
     bool checkPrimeFrequency(vector<int>& nums) {
-        unordered_map<int, int> mpp;
+        int arr[101] = {-1};
         for(int i = 0; i < nums.size(); i++){
-            mpp[nums[i]]++;
+            if(arr[nums[i]] == -1) arr[nums[i]] = 1;
+            else arr[nums[i]]++;
         }
-        for(auto it : mpp){
-            if(isPrime(it.second)) return true;
+        for(int i = 0; i < 101; i++){
+            if(arr[i] != -1 && isPrime(arr[i])) return true;
         }
         return false;
     }
