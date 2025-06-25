@@ -12,6 +12,7 @@ public:
             for(int j = 1; j < words[i].length(); j++){
                 if(a[tolower(words[i][j]) - 'a'] != a[tolower(words[i][0]) - 'a']){
                     flag = false;
+                    break;
                 } 
             }
             if(flag) ans.push_back(words[i]);
