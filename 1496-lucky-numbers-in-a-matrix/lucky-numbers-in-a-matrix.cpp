@@ -1,19 +1,21 @@
 class Solution {
 public:
     vector<int> luckyNumbers(vector<vector<int>>& matrix) {
+        int rows = matrix.size();
+        int columns = matrix[0].size();
         vector<int> ans;
-        for(int i = 0; i < matrix.size(); i++){
-            int index = -1;
+        for(int i = 0; i < rows; i++){
+            int col = -1;
             int minimum = INT_MAX;
-            for(int j = 0; j < matrix[0].size(); j++){
+            for(int j = 0; j < columns; j++){
                 if(matrix[i][j] < minimum){
                     minimum = matrix[i][j];
-                    index = j;
+                    col = j;
                 }
             }
             int maximum = INT_MIN;
-            for(int j = 0; j < matrix.size(); j++){
-                maximum = max(maximum, matrix[j][index]);
+            for(int i = 0; i < rows; i++){
+                maximum = max(maximum, matrix[i][col]);
             }
             if(maximum == minimum) ans.push_back(maximum);
         }
