@@ -5,9 +5,7 @@ public:
         int i = 0, j = 0; 
         while(i < nums1.size() && j < nums2.size()){
             if(nums1[i][0] == nums2[j][0]){
-                int val1 = nums1[i][0];
-                int val2 = nums1[i][1] + nums2[j][1];
-                ans.push_back({val1, val2});
+                ans.push_back({nums1[i][0], nums1[i][1] + nums2[j][1]});
                 i++;
                 j++;
             }
