@@ -11,8 +11,7 @@ public:
                 res = max(res, cnt);
                 cnt = 1;
             }
-        }
-        res = max(res, cnt);
-        return res;
+        } 
+        return max(res, cnt);
     }
 };
