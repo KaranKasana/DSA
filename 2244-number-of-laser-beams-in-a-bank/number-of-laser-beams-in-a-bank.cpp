@@ -9,9 +9,7 @@ public:
                 if(bank[i][j] == '1') devices++;
             }
             if(devices){
-                if(prev){
-                    cnt += prev * devices;
-                }
+                if(prev) cnt += prev * devices;
                 prev = devices;
             }
         }
