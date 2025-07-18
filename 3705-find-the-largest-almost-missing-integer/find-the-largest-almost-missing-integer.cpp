@@ -14,7 +14,7 @@ public:
         else if(k == n){
             return *max_element(nums.begin(), nums.end());
         }
-        else if(1 < k && k < n){
+        else{
             int cnt1 = mpp[nums[0]];
             int cnt2 = mpp[nums[n - 1]];
             if(cnt1 == 1 && cnt2 == 1) 
