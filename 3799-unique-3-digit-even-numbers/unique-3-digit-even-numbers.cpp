@@ -2,31 +2,25 @@ class Solution {
 public:
     int totalNumbers(vector<int>& digits) {
         vector<int> freq(10, 0);
-        for(int i = 0; i < digits.size(); i++) freq[digits[i]]++;
-        int n = freq.size();
-        unordered_set<int> uniqueDigits;
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                for(int k = 0; k < n; k++){
-                    if(i == 0 || k % 2 != 0) continue;
-                    unordered_map<int, int> candidateFreq;
-                    candidateFreq[i]++;
-                    candidateFreq[j]++;
-                    candidateFreq[k]++;
-                    bool valid = true;
-                    for (auto& [digit, cnt] : candidateFreq) {
-                        if (cnt > freq[digit]) {
-                            valid = false;
-                            break;
-                        }
-                    }
-                    if (valid) {
-                        int num = i * 100 + j * 10 + k;
-                        uniqueDigits.insert(num);
-                    }
+        for (int d : digits) freq[d]++;
+        unordered_set<int> result;
+        for (int i = 100; i <= 998; i += 2) {
+            int a = i / 100;
+            int b = (i / 10) % 10;
+            int c = i % 10;
+            vector<int> tempFreq(10, 0);
+            tempFreq[a]++;
+            tempFreq[b]++;
+            tempFreq[c]++;
+            bool valid = true;
+            for (int d = 0; d < 10; d++) {
+                if (tempFreq[d] > freq[d]) {
+                    valid = false;
+                    break;
                 }
             }
+            if (valid) result.insert(i);
         }
-        return uniqueDigits.size();
+        return result.size();
     }
 };
