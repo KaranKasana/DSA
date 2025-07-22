@@ -4,7 +4,6 @@ public:
         vector<int> freq(10, 0);
         for (int d : digits) freq[d]++;
         unordered_set<int> unique;
-
         int n = digits.size();
         for (int i = 0; i < n; i++) {
             if (digits[i] == 0) continue;
