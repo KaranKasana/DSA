@@ -9,7 +9,7 @@ public:
             for(int j = 0; j < n; j++){
                 for(int k = 0; k < n; k++){
                     if(i == 0 || k % 2 != 0) continue;
-                     unordered_map<int, int> candidateFreq;
+                    unordered_map<int, int> candidateFreq;
                     candidateFreq[i]++;
                     candidateFreq[j]++;
                     candidateFreq[k]++;
