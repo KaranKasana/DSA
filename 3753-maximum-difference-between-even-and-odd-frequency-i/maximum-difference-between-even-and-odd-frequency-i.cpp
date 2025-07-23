@@ -8,6 +8,6 @@ public:
             if(it.second % 2 != 0 && it.second > odd) odd = it.second;
             else if(it.second % 2 == 0 && it.second < even) even = it.second;
         }
-        return odd - even;
+        return (odd - even);
     }
 };
