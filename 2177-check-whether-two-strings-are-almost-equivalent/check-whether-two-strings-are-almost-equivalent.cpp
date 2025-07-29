@@ -4,10 +4,8 @@ public:
         vector<int> v(26, 0);
         for(int i = 0; i < word1.length(); i++){
             v[word1[i] - 'a']++;
-        }
-        for(int i = 0; i < word2.length(); i++){
             v[word2[i] - 'a']--;
-        }  
+        }     
         for(int diff : v){
             if(abs(diff) > 3) return false;
         }
