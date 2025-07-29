@@ -6,8 +6,8 @@ public:
             v[word1[i] - 'a']++;
             v[word2[i] - 'a']--;
         }     
-        for(int diff : v){
-            if(abs(diff) > 3) return false;
+        for(int i = 0; i < v.size(); i++){
+            if(abs(v[i]) > 3) return false;
         }
         return true;
     }
