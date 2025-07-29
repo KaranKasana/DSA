@@ -9,10 +9,10 @@ public:
         int ans = 0;
         for(int i = 0; i < n; i++){
             if(!isVowel(word[i])) continue;
-            unordered_map<char, int> mpp;
+            unordered_set<char> st;
             for(int j = i; j < n && isVowel(word[j]); j++){
-                mpp[word[j]]++;
-                if(mpp.size() == 5) ans++;
+                st.insert(word[j]);
+                if(st.size() == 5) ans++;
             }
         }
         return ans;
