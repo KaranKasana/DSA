@@ -2,12 +2,11 @@ class Solution {
 public:
     int minTimeToType(string word) {
         int res = 0;
-        int dist = abs('a' - word[0]);
-        res += min(dist, 26 - dist);
+        res += min(abs('a' - word[0]),
+                abs(26 - (abs('a' - word[0]) % 26)));
         for(int i = 1; i < word.size(); i++){
-            dist = abs(word[i] - word[i - 1]);
-            res += min(dist , 26 - dist);
-   
+            res += min(abs(word[i] - word[i - 1]),
+                abs(26 - (abs(word[i] - word[i - 1]) % 26)));
         }
         return res + word.size();
     }
