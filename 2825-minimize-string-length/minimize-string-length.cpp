@@ -1,8 +1,14 @@
 class Solution {
 public:
     int minimizedStringLength(string s) {
-        unordered_set<char> unique;
-        for(char c : s) unique.insert(c);
-        return unique.size();
+        vector<int> unique(26, 0);
+        int cnt = 0;
+        for(int i = 0; i < s.size(); i++){
+            if(!unique[s[i] - 'a']){
+                unique[s[i] - 'a'] = 1;
+                cnt++;
+            }
+        }
+        return cnt;
     }
 };
